@@ -831,8 +831,6 @@ Error message and password prompt
 
 <li>Trajectory software project with Goodwin</li>
 
-<li>TspotSetupPlugin</li>
-
 <li>Turbidity</li>
 
 <li>Turbidity measurements</li>
@@ -840,8 +838,6 @@ Error message and password prompt
 <li>unix script</li>
 
 <li>UNIX, LINUX, WINDOWS, MATLAB COMMANDS</li>
-
-<li>UploadPlugin</li>
 
 <li>upwelling, temperature and productivity</li>
 
@@ -10910,7 +10906,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20201102220626063" creator="Z" list="" modified="20201102221106766" modifier="Z" title="$:/StoryList">
+<div created="20201102223959133" creator="Z" list="MainMenu" modified="20201102224021633" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10926,7 +10922,7 @@ very-muted-foreground: #888888</pre>
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///D:/Downloads/empty.html&quot;
+            &quot;text&quot;: &quot;file:///D:/Documents/GitHub/mnemoir/mnemoir.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -10946,7 +10942,7 @@ very-muted-foreground: #888888</pre>
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/D:/Downloads/empty.html&quot;
+            &quot;text&quot;: &quot;/D:/Documents/GitHub/mnemoir/mnemoir.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -11410,8 +11406,7 @@ which in my case was:
 #COAWST ~ScienceBase page</pre>
 </div>
 <div created="20200728185128561" creator="Z" modified="20200728191553040" modifier="Z" title="About Sea-Level Rise">
-<pre>
-&quot;&quot;&quot;
+<pre>&quot;&quot;&quot;
 Locally Relevant Sea-Level Rise Projections
 http://masgc.org/northern-gulf-of-mexico-sentinel-site-co/two-pager
 https://webapps.msucares.com/slr/
@@ -11560,8 +11555,7 @@ C:\cygwin\home\zdefne\adcirc&gt;adcirc_extract.exe
 </pre>
 </div>
 <div created="20180327222057635" creator="Z" modified="20180827023528392" modifier="Z" tags="[[unix script]]" title="applyChanges.sh">
-<pre>
-;applyChanges.sh
+<pre>;applyChanges.sh
 :-app name terriamap
 :-image name terria-local
 
@@ -12403,8 +12397,7 @@ All files are there but Downloads folder was used as cratch folder for processin
 </pre>
 </div>
 <div created="20170511162733982" creator="Z" modified="20200821200724671" modifier="Z" tags="Journal data metadata" title="CMG Portal">
-<pre>
-;Oceanographic Model and Data Portal
+<pre>;Oceanographic Model and Data Portal
 :http://cmgdata.usgsportals.net/
 :https://geoport.usgs.esipfed.org/thredds/catalog/sand/usgs/Projects/catalog.html
 
@@ -13754,8 +13747,7 @@ Ev/H -&gt; vertical E divided by H?
 </pre>
 </div>
 <div created="20141202195431484" modified="20150814184338309" title="ESA connectivity">
-<pre>
-see `connectivity_ESA.m` and `patch_test.m`
+<pre>see `connectivity_ESA.m` and `patch_test.m`
 
 C:\Users\zdefne\Documents\MATLAB\BB_matlab\RUNS\run034\floats\float_24hr
 
@@ -19978,8 +19970,7 @@ bed thickness=  2 m
 </pre>
 </div>
 <div created="20160328144748290" creator="Z" modified="20181113164016706" modifier="Z" tags="ROMS" title="run076">
-<pre>
-;See 
+<pre>;See 
 :[[Storm response paper]] for the recent updates too.
 :Input files are in ''Sand:\\run076in''.
 ;NOTE
@@ -22628,73 +22619,6 @@ raolivieri@cairdsextant.com
 &quot;&quot;&quot;
 </pre>
 </div>
-<div changecount="1" created="20140117215600000" creator="scylla" modifier="scylla" tags="systemConfig" title="TspotSetupPlugin" type="text/x-tiddlywiki">
-<pre>/***
-Description: Contains the stuff you need to use Tiddlyspot
-Note, you also need UploadPlugin, PasswordOptionPlugin and LoadRemoteFileThroughProxy
-from http://tiddlywiki.bidix.info for a complete working Tiddlyspot site.
-***/
-//{{{
-
-// edit this if you are migrating sites or retrofitting an existing TW
-config.tiddlyspotSiteId = 'mnemoir';
-
-// make it so you can by default see edit controls via http
-config.options.chkHttpReadOnly = false;
-window.readOnly = false; // make sure of it (for tw 2.2)
-window.showBackstage = true; // show backstage too
-
-// disable autosave in d3
-if (window.location.protocol != &quot;file:&quot;)
-	config.options.chkGTDLazyAutoSave = false;
-
-// tweak shadow tiddlers to add upload button, password entry box etc
-with (config.shadowTiddlers) {
-	SiteUrl = 'http://'+config.tiddlyspotSiteId+'.tiddlyspot.com';
-	SideBarOptions = SideBarOptions.replace(/(&lt;&lt;saveChanges&gt;&gt;)/,&quot;$1&lt;&lt;tiddler TspotSidebar&gt;&gt;&quot;);
-	OptionsPanel = OptionsPanel.replace(/^/,&quot;&lt;&lt;tiddler TspotOptions&gt;&gt;&quot;);
-	DefaultTiddlers = DefaultTiddlers.replace(/^/,&quot;[[WelcomeToTiddlyspot]] &quot;);
-	MainMenu = MainMenu.replace(/^/,&quot;[[WelcomeToTiddlyspot]] &quot;);
-}
-
-// create some shadow tiddler content
-merge(config.shadowTiddlers,{
-
-'TspotControls':[
- &quot;| tiddlyspot password:|&lt;&lt;option pasUploadPassword&gt;&gt;|&quot;,
- &quot;| site management:|&lt;&lt;upload http://&quot; + config.tiddlyspotSiteId + &quot;.tiddlyspot.com/store.cgi index.html . .  &quot; + config.tiddlyspotSiteId + &quot;&gt;&gt;//(requires tiddlyspot password)//&lt;br&gt;[[control panel|http://&quot; + config.tiddlyspotSiteId + &quot;.tiddlyspot.com/controlpanel]], [[download (go offline)|http://&quot; + config.tiddlyspotSiteId + &quot;.tiddlyspot.com/download]]|&quot;,
- &quot;| links:|[[tiddlyspot.com|http://tiddlyspot.com/]], [[FAQs|http://faq.tiddlyspot.com/]], [[blog|http://tiddlyspot.blogspot.com/]], email [[support|mailto:support@tiddlyspot.com]] &amp; [[feedback|mailto:feedback@tiddlyspot.com]], [[donate|http://tiddlyspot.com/?page=donate]]|&quot;
-].join(&quot;\n&quot;),
-
-'TspotOptions':[
- &quot;tiddlyspot password:&quot;,
- &quot;&lt;&lt;option pasUploadPassword&gt;&gt;&quot;,
- &quot;&quot;
-].join(&quot;\n&quot;),
-
-'TspotSidebar':[
- &quot;&lt;&lt;upload http://&quot; + config.tiddlyspotSiteId + &quot;.tiddlyspot.com/store.cgi index.html . .  &quot; + config.tiddlyspotSiteId + &quot;&gt;&gt;&lt;html&gt;&lt;a href='http://&quot; + config.tiddlyspotSiteId + &quot;.tiddlyspot.com/download' class='button'&gt;download&lt;/a&gt;&lt;/html&gt;&quot;
-].join(&quot;\n&quot;),
-
-'WelcomeToTiddlyspot':[
- &quot;This document is a ~TiddlyWiki from tiddlyspot.com.  A ~TiddlyWiki is an electronic notebook that is great for managing todo lists, personal information, and all sorts of things.&quot;,
- &quot;&quot;,
- &quot;@@font-weight:bold;font-size:1.3em;color:#444; //What now?// &amp;nbsp;&amp;nbsp;@@ Before you can save any changes, you need to enter your password in the form below.  Then configure privacy and other site settings at your [[control panel|http://&quot; + config.tiddlyspotSiteId + &quot;.tiddlyspot.com/controlpanel]] (your control panel username is //&quot; + config.tiddlyspotSiteId + &quot;//).&quot;,
- &quot;&lt;&lt;tiddler TspotControls&gt;&gt;&quot;,
- &quot;See also GettingStarted.&quot;,
- &quot;&quot;,
- &quot;@@font-weight:bold;font-size:1.3em;color:#444; //Working online// &amp;nbsp;&amp;nbsp;@@ You can edit this ~TiddlyWiki right now, and save your changes using the \&quot;save to web\&quot; button in the column on the right.&quot;,
- &quot;&quot;,
- &quot;@@font-weight:bold;font-size:1.3em;color:#444; //Working offline// &amp;nbsp;&amp;nbsp;@@ A fully functioning copy of this ~TiddlyWiki can be saved onto your hard drive or USB stick.  You can make changes and save them locally without being connected to the Internet.  When you're ready to sync up again, just click \&quot;upload\&quot; and your ~TiddlyWiki will be saved back to tiddlyspot.com.&quot;,
- &quot;&quot;,
- &quot;@@font-weight:bold;font-size:1.3em;color:#444; //Help!// &amp;nbsp;&amp;nbsp;@@ Find out more about ~TiddlyWiki at [[TiddlyWiki.com|http://tiddlywiki.com]].  Also visit [[TiddlyWiki.org|http://tiddlywiki.org]] for documentation on learning and using ~TiddlyWiki. New users are especially welcome on the [[TiddlyWiki mailing list|http://groups.google.com/group/TiddlyWiki]], which is an excellent place to ask questions and get help.  If you have a tiddlyspot related problem email [[tiddlyspot support|mailto:support@tiddlyspot.com]].&quot;,
- &quot;&quot;,
- &quot;@@font-weight:bold;font-size:1.3em;color:#444; //Enjoy :)// &amp;nbsp;&amp;nbsp;@@ We hope you like using your tiddlyspot.com site.  Please email [[feedback@tiddlyspot.com|mailto:feedback@tiddlyspot.com]] with any comments or suggestions.&quot;
-].join(&quot;\n&quot;)
-
-});
-//}}}</pre>
-</div>
 <div created="20150513140230010" modified="20150513140431726" tags="measurements" title="Turbidity">
 <pre>from
 
@@ -22879,558 +22803,6 @@ filename=&quot;${filename%.*}&quot;
 ;time -p ./mycomputation
 </pre>
 </div>
-<div changecount="1" created="20140117215500000" creator="scylla" modifier="scylla" tags="systemConfig" title="UploadPlugin" type="text/x-tiddlywiki">
-<pre>/***
-|''Name:''|UploadPlugin|
-|''Description:''|Save to web a TiddlyWiki|
-|''Version:''|4.1.3|
-|''Date:''|Feb 24, 2008|
-|''Source:''|http://tiddlywiki.bidix.info/#UploadPlugin|
-|''Documentation:''|http://tiddlywiki.bidix.info/#UploadPluginDoc|
-|''Author:''|BidiX (BidiX (at) bidix (dot) info)|
-|''License:''|[[BSD open source license|http://tiddlywiki.bidix.info/#%5B%5BBSD%20open%20source%20license%5D%5D ]]|
-|''~CoreVersion:''|2.2.0|
-|''Requires:''|PasswordOptionPlugin|
-***/
-//{{{
-version.extensions.UploadPlugin = {
-	major: 4, minor: 1, revision: 3,
-	date: new Date(&quot;Feb 24, 2008&quot;),
-	source: 'http://tiddlywiki.bidix.info/#UploadPlugin',
-	author: 'BidiX (BidiX (at) bidix (dot) info',
-	coreVersion: '2.2.0'
-};
-
-//
-// Environment
-//
-
-if (!window.bidix) window.bidix = {}; // bidix namespace
-bidix.debugMode = false;	// true to activate both in Plugin and UploadService
-	
-//
-// Upload Macro
-//
-
-config.macros.upload = {
-// default values
-	defaultBackupDir: '',	//no backup
-	defaultStoreScript: &quot;store.php&quot;,
-	defaultToFilename: &quot;index.html&quot;,
-	defaultUploadDir: &quot;.&quot;,
-	authenticateUser: true	// UploadService Authenticate User
-};
-	
-config.macros.upload.label = {
-	promptOption: &quot;Save and Upload this TiddlyWiki with UploadOptions&quot;,
-	promptParamMacro: &quot;Save and Upload this TiddlyWiki in %0&quot;,
-	saveLabel: &quot;save to web&quot;, 
-	saveToDisk: &quot;save to disk&quot;,
-	uploadLabel: &quot;upload&quot;	
-};
-
-config.macros.upload.messages = {
-	noStoreUrl: &quot;No store URL in parmeters or options&quot;,
-	usernameOrPasswordMissing: &quot;Username or password missing&quot;
-};
-
-config.macros.upload.handler = function(place,macroName,params) {
-	if (readOnly)
-		return;
-	var label;
-	if (document.location.toString().substr(0,4) == &quot;http&quot;) 
-		label = this.label.saveLabel;
-	else
-		label = this.label.uploadLabel;
-	var prompt;
-	if (params[0]) {
-		prompt = this.label.promptParamMacro.toString().format([this.destFile(params[0], 
-			(params[1] ? params[1]:bidix.basename(window.location.toString())), params[3])]);
-	} else {
-		prompt = this.label.promptOption;
-	}
-	createTiddlyButton(place, label, prompt, function() {config.macros.upload.action(params);}, null, null, this.accessKey);
-};
-
-config.macros.upload.action = function(params)
-{
-		// for missing macro parameter set value from options
-		if (!params) params = {};
-		var storeUrl = params[0] ? params[0] : config.options.txtUploadStoreUrl;
-		var toFilename = params[1] ? params[1] : config.options.txtUploadFilename;
-		var backupDir = params[2] ? params[2] : config.options.txtUploadBackupDir;
-		var uploadDir = params[3] ? params[3] : config.options.txtUploadDir;
-		var username = params[4] ? params[4] : config.options.txtUploadUserName;
-		var password = config.options.pasUploadPassword; // for security reason no password as macro parameter	
-		// for still missing parameter set default value
-		if ((!storeUrl) &amp;&amp; (document.location.toString().substr(0,4) == &quot;http&quot;)) 
-			storeUrl = bidix.dirname(document.location.toString())+'/'+config.macros.upload.defaultStoreScript;
-		if (storeUrl.substr(0,4) != &quot;http&quot;)
-			storeUrl = bidix.dirname(document.location.toString()) +'/'+ storeUrl;
-		if (!toFilename)
-			toFilename = bidix.basename(window.location.toString());
-		if (!toFilename)
-			toFilename = config.macros.upload.defaultToFilename;
-		if (!uploadDir)
-			uploadDir = config.macros.upload.defaultUploadDir;
-		if (!backupDir)
-			backupDir = config.macros.upload.defaultBackupDir;
-		// report error if still missing
-		if (!storeUrl) {
-			alert(config.macros.upload.messages.noStoreUrl);
-			clearMessage();
-			return false;
-		}
-		if (config.macros.upload.authenticateUser &amp;&amp; (!username || !password)) {
-			alert(config.macros.upload.messages.usernameOrPasswordMissing);
-			clearMessage();
-			return false;
-		}
-		bidix.upload.uploadChanges(false,null,storeUrl, toFilename, uploadDir, backupDir, username, password); 
-		return false; 
-};
-
-config.macros.upload.destFile = function(storeUrl, toFilename, uploadDir) 
-{
-	if (!storeUrl)
-		return null;
-		var dest = bidix.dirname(storeUrl);
-		if (uploadDir &amp;&amp; uploadDir != '.')
-			dest = dest + '/' + uploadDir;
-		dest = dest + '/' + toFilename;
-	return dest;
-};
-
-//
-// uploadOptions Macro
-//
-
-config.macros.uploadOptions = {
-	handler: function(place,macroName,params) {
-		var wizard = new Wizard();
-		wizard.createWizard(place,this.wizardTitle);
-		wizard.addStep(this.step1Title,this.step1Html);
-		var markList = wizard.getElement(&quot;markList&quot;);
-		var listWrapper = document.createElement(&quot;div&quot;);
-		markList.parentNode.insertBefore(listWrapper,markList);
-		wizard.setValue(&quot;listWrapper&quot;,listWrapper);
-		this.refreshOptions(listWrapper,false);
-		var uploadCaption;
-		if (document.location.toString().substr(0,4) == &quot;http&quot;) 
-			uploadCaption = config.macros.upload.label.saveLabel;
-		else
-			uploadCaption = config.macros.upload.label.uploadLabel;
-		
-		wizard.setButtons([
-				{caption: uploadCaption, tooltip: config.macros.upload.label.promptOption, 
-					onClick: config.macros.upload.action},
-				{caption: this.cancelButton, tooltip: this.cancelButtonPrompt, onClick: this.onCancel}
-				
-			]);
-	},
-	options: [
-		&quot;txtUploadUserName&quot;,
-		&quot;pasUploadPassword&quot;,
-		&quot;txtUploadStoreUrl&quot;,
-		&quot;txtUploadDir&quot;,
-		&quot;txtUploadFilename&quot;,
-		&quot;txtUploadBackupDir&quot;,
-		&quot;chkUploadLog&quot;,
-		&quot;txtUploadLogMaxLine&quot;		
-	],
-	refreshOptions: function(listWrapper) {
-		var opts = [];
-		for(i=0; i&lt;this.options.length; i++) {
-			var opt = {};
-			opts.push();
-			opt.option = &quot;&quot;;
-			n = this.options[i];
-			opt.name = n;
-			opt.lowlight = !config.optionsDesc[n];
-			opt.description = opt.lowlight ? this.unknownDescription : config.optionsDesc[n];
-			opts.push(opt);
-		}
-		var listview = ListView.create(listWrapper,opts,this.listViewTemplate);
-		for(n=0; n&lt;opts.length; n++) {
-			var type = opts[n].name.substr(0,3);
-			var h = config.macros.option.types[type];
-			if (h &amp;&amp; h.create) {
-				h.create(opts[n].colElements['option'],type,opts[n].name,opts[n].name,&quot;no&quot;);
-			}
-		}
-		
-	},
-	onCancel: function(e)
-	{
-		backstage.switchTab(null);
-		return false;
-	},
-	
-	wizardTitle: &quot;Upload with options&quot;,
-	step1Title: &quot;These options are saved in cookies in your browser&quot;,
-	step1Html: &quot;&lt;input type='hidden' name='markList'&gt;&lt;/input&gt;&lt;br&gt;&quot;,
-	cancelButton: &quot;Cancel&quot;,
-	cancelButtonPrompt: &quot;Cancel prompt&quot;,
-	listViewTemplate: {
-		columns: [
-			{name: 'Description', field: 'description', title: &quot;Description&quot;, type: 'WikiText'},
-			{name: 'Option', field: 'option', title: &quot;Option&quot;, type: 'String'},
-			{name: 'Name', field: 'name', title: &quot;Name&quot;, type: 'String'}
-			],
-		rowClasses: [
-			{className: 'lowlight', field: 'lowlight'} 
-			]}
-};
-
-//
-// upload functions
-//
-
-if (!bidix.upload) bidix.upload = {};
-
-if (!bidix.upload.messages) bidix.upload.messages = {
-	//from saving
-	invalidFileError: &quot;The original file '%0' does not appear to be a valid TiddlyWiki&quot;,
-	backupSaved: &quot;Backup saved&quot;,
-	backupFailed: &quot;Failed to upload backup file&quot;,
-	rssSaved: &quot;RSS feed uploaded&quot;,
-	rssFailed: &quot;Failed to upload RSS feed file&quot;,
-	emptySaved: &quot;Empty template uploaded&quot;,
-	emptyFailed: &quot;Failed to upload empty template file&quot;,
-	mainSaved: &quot;Main TiddlyWiki file uploaded&quot;,
-	mainFailed: &quot;Failed to upload main TiddlyWiki file. Your changes have not been saved&quot;,
-	//specific upload
-	loadOriginalHttpPostError: &quot;Can't get original file&quot;,
-	aboutToSaveOnHttpPost: 'About to upload on %0 ...',
-	storePhpNotFound: &quot;The store script '%0' was not found.&quot;
-};
-
-bidix.upload.uploadChanges = function(onlyIfDirty,tiddlers,storeUrl,toFilename,uploadDir,backupDir,username,password)
-{
-	var callback = function(status,uploadParams,original,url,xhr) {
-		if (!status) {
-			displayMessage(bidix.upload.messages.loadOriginalHttpPostError);
-			return;
-		}
-		if (bidix.debugMode) 
-			alert(original.substr(0,500)+&quot;\n...&quot;);
-		// Locate the storeArea div's 
-		var posDiv = locateStoreArea(original);
-		if((posDiv[0] == -1) || (posDiv[1] == -1)) {
-			alert(config.messages.invalidFileError.format([localPath]));
-			return;
-		}
-		bidix.upload.uploadRss(uploadParams,original,posDiv);
-	};
-	
-	if(onlyIfDirty &amp;&amp; !store.isDirty())
-		return;
-	clearMessage();
-	// save on localdisk ?
-	if (document.location.toString().substr(0,4) == &quot;file&quot;) {
-		var path = document.location.toString();
-		var localPath = getLocalPath(path);
-		saveChanges();
-	}
-	// get original
-	var uploadParams = new Array(storeUrl,toFilename,uploadDir,backupDir,username,password);
-	var originalPath = document.location.toString();
-	// If url is a directory : add index.html
-	if (originalPath.charAt(originalPath.length-1) == &quot;/&quot;)
-		originalPath = originalPath + &quot;index.html&quot;;
-	var dest = config.macros.upload.destFile(storeUrl,toFilename,uploadDir);
-	var log = new bidix.UploadLog();
-	log.startUpload(storeUrl, dest, uploadDir,  backupDir);
-	displayMessage(bidix.upload.messages.aboutToSaveOnHttpPost.format([dest]));
-	if (bidix.debugMode) 
-		alert(&quot;about to execute Http - GET on &quot;+originalPath);
-	var r = doHttp(&quot;GET&quot;,originalPath,null,null,username,password,callback,uploadParams,null);
-	if (typeof r == &quot;string&quot;)
-		displayMessage(r);
-	return r;
-};
-
-bidix.upload.uploadRss = function(uploadParams,original,posDiv) 
-{
-	var callback = function(status,params,responseText,url,xhr) {
-		if(status) {
-			var destfile = responseText.substring(responseText.indexOf(&quot;destfile:&quot;)+9,responseText.indexOf(&quot;\n&quot;, responseText.indexOf(&quot;destfile:&quot;)));
-			displayMessage(bidix.upload.messages.rssSaved,bidix.dirname(url)+'/'+destfile);
-			bidix.upload.uploadMain(params[0],params[1],params[2]);
-		} else {
-			displayMessage(bidix.upload.messages.rssFailed);			
-		}
-	};
-	// do uploadRss
-	if(config.options.chkGenerateAnRssFeed) {
-		var rssPath = uploadParams[1].substr(0,uploadParams[1].lastIndexOf(&quot;.&quot;)) + &quot;.xml&quot;;
-		var rssUploadParams = new Array(uploadParams[0],rssPath,uploadParams[2],'',uploadParams[4],uploadParams[5]);
-		var rssString = generateRss();
-		// no UnicodeToUTF8 conversion needed when location is &quot;file&quot; !!!
-		if (document.location.toString().substr(0,4) != &quot;file&quot;)
-			rssString = convertUnicodeToUTF8(rssString);	
-		bidix.upload.httpUpload(rssUploadParams,rssString,callback,Array(uploadParams,original,posDiv));
-	} else {
-		bidix.upload.uploadMain(uploadParams,original,posDiv);
-	}
-};
-
-bidix.upload.uploadMain = function(uploadParams,original,posDiv) 
-{
-	var callback = function(status,params,responseText,url,xhr) {
-		var log = new bidix.UploadLog();
-		if(status) {
-			// if backupDir specified
-			if ((params[3]) &amp;&amp; (responseText.indexOf(&quot;backupfile:&quot;) &gt; -1))  {
-				var backupfile = responseText.substring(responseText.indexOf(&quot;backupfile:&quot;)+11,responseText.indexOf(&quot;\n&quot;, responseText.indexOf(&quot;backupfile:&quot;)));
-				displayMessage(bidix.upload.messages.backupSaved,bidix.dirname(url)+'/'+backupfile);
-			}
-			var destfile = responseText.substring(responseText.indexOf(&quot;destfile:&quot;)+9,responseText.indexOf(&quot;\n&quot;, responseText.indexOf(&quot;destfile:&quot;)));
-			displayMessage(bidix.upload.messages.mainSaved,bidix.dirname(url)+'/'+destfile);
-			store.setDirty(false);
-			log.endUpload(&quot;ok&quot;);
-		} else {
-			alert(bidix.upload.messages.mainFailed);
-			displayMessage(bidix.upload.messages.mainFailed);
-			log.endUpload(&quot;failed&quot;);			
-		}
-	};
-	// do uploadMain
-	var revised = bidix.upload.updateOriginal(original,posDiv);
-	bidix.upload.httpUpload(uploadParams,revised,callback,uploadParams);
-};
-
-bidix.upload.httpUpload = function(uploadParams,data,callback,params)
-{
-	var localCallback = function(status,params,responseText,url,xhr) {
-		url = (url.indexOf(&quot;nocache=&quot;) &lt; 0 ? url : url.substring(0,url.indexOf(&quot;nocache=&quot;)-1));
-		if (xhr.status == 404)
-			alert(bidix.upload.messages.storePhpNotFound.format([url]));
-		if ((bidix.debugMode) || (responseText.indexOf(&quot;Debug mode&quot;) &gt;= 0 )) {
-			alert(responseText);
-			if (responseText.indexOf(&quot;Debug mode&quot;) &gt;= 0 )
-				responseText = responseText.substring(responseText.indexOf(&quot;\n\n&quot;)+2);
-		} else if (responseText.charAt(0) != '0') 
-			alert(responseText);
-		if (responseText.charAt(0) != '0')
-			status = null;
-		callback(status,params,responseText,url,xhr);
-	};
-	// do httpUpload
-	var boundary = &quot;---------------------------&quot;+&quot;AaB03x&quot;;	
-	var uploadFormName = &quot;UploadPlugin&quot;;
-	// compose headers data
-	var sheader = &quot;&quot;;
-	sheader += &quot;--&quot; + boundary + &quot;\r\nContent-disposition: form-data; name=\&quot;&quot;;
-	sheader += uploadFormName +&quot;\&quot;\r\n\r\n&quot;;
-	sheader += &quot;backupDir=&quot;+uploadParams[3] +
-				&quot;;user=&quot; + uploadParams[4] +
-				&quot;;password=&quot; + uploadParams[5] +
-				&quot;;uploaddir=&quot; + uploadParams[2];
-	if (bidix.debugMode)
-		sheader += &quot;;debug=1&quot;;
-	sheader += &quot;;;\r\n&quot;; 
-	sheader += &quot;\r\n&quot; + &quot;--&quot; + boundary + &quot;\r\n&quot;;
-	sheader += &quot;Content-disposition: form-data; name=\&quot;userfile\&quot;; filename=\&quot;&quot;+uploadParams[1]+&quot;\&quot;\r\n&quot;;
-	sheader += &quot;Content-Type: text/html;charset=UTF-8&quot; + &quot;\r\n&quot;;
-	sheader += &quot;Content-Length: &quot; + data.length + &quot;\r\n\r\n&quot;;
-	// compose trailer data
-	var strailer = new String();
-	strailer = &quot;\r\n--&quot; + boundary + &quot;--\r\n&quot;;
-	data = sheader + data + strailer;
-	if (bidix.debugMode) alert(&quot;about to execute Http - POST on &quot;+uploadParams[0]+&quot;\n with \n&quot;+data.substr(0,500)+ &quot; ... &quot;);
-	var r = doHttp(&quot;POST&quot;,uploadParams[0],data,&quot;multipart/form-data; ;charset=UTF-8; boundary=&quot;+boundary,uploadParams[4],uploadParams[5],localCallback,params,null);
-	if (typeof r == &quot;string&quot;)
-		displayMessage(r);
-	return r;
-};
-
-// same as Saving's updateOriginal but without convertUnicodeToUTF8 calls
-bidix.upload.updateOriginal = function(original, posDiv)
-{
-	if (!posDiv)
-		posDiv = locateStoreArea(original);
-	if((posDiv[0] == -1) || (posDiv[1] == -1)) {
-		alert(config.messages.invalidFileError.format([localPath]));
-		return;
-	}
-	var revised = original.substr(0,posDiv[0] + startSaveArea.length) + &quot;\n&quot; +
-				store.allTiddlersAsHtml() + &quot;\n&quot; +
-				original.substr(posDiv[1]);
-	var newSiteTitle = getPageTitle().htmlEncode();
-	revised = revised.replaceChunk(&quot;&lt;title&quot;+&quot;&gt;&quot;,&quot;&lt;/title&quot;+&quot;&gt;&quot;,&quot; &quot; + newSiteTitle + &quot; &quot;);
-	revised = updateMarkupBlock(revised,&quot;PRE-HEAD&quot;,&quot;MarkupPreHead&quot;);
-	revised = updateMarkupBlock(revised,&quot;POST-HEAD&quot;,&quot;MarkupPostHead&quot;);
-	revised = updateMarkupBlock(revised,&quot;PRE-BODY&quot;,&quot;MarkupPreBody&quot;);
-	revised = updateMarkupBlock(revised,&quot;POST-SCRIPT&quot;,&quot;MarkupPostBody&quot;);
-	return revised;
-};
-
-//
-// UploadLog
-// 
-// config.options.chkUploadLog :
-//		false : no logging
-//		true : logging
-// config.options.txtUploadLogMaxLine :
-//		-1 : no limit
-//      0 :  no Log lines but UploadLog is still in place
-//		n :  the last n lines are only kept
-//		NaN : no limit (-1)
-
-bidix.UploadLog = function() {
-	if (!config.options.chkUploadLog) 
-		return; // this.tiddler = null
-	this.tiddler = store.getTiddler(&quot;UploadLog&quot;);
-	if (!this.tiddler) {
-		this.tiddler = new Tiddler();
-		this.tiddler.title = &quot;UploadLog&quot;;
-		this.tiddler.text = &quot;| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |&quot;;
-		this.tiddler.created = new Date();
-		this.tiddler.modifier = config.options.txtUserName;
-		this.tiddler.modified = new Date();
-		store.addTiddler(this.tiddler);
-	}
-	return this;
-};
-
-bidix.UploadLog.prototype.addText = function(text) {
-	if (!this.tiddler)
-		return;
-	// retrieve maxLine when we need it
-	var maxLine = parseInt(config.options.txtUploadLogMaxLine,10);
-	if (isNaN(maxLine))
-		maxLine = -1;
-	// add text
-	if (maxLine != 0) 
-		this.tiddler.text = this.tiddler.text + text;
-	// Trunck to maxLine
-	if (maxLine &gt;= 0) {
-		var textArray = this.tiddler.text.split('\n');
-		if (textArray.length &gt; maxLine + 1)
-			textArray.splice(1,textArray.length-1-maxLine);
-			this.tiddler.text = textArray.join('\n');		
-	}
-	// update tiddler fields
-	this.tiddler.modifier = config.options.txtUserName;
-	this.tiddler.modified = new Date();
-	store.addTiddler(this.tiddler);
-	// refresh and notifiy for immediate update
-	story.refreshTiddler(this.tiddler.title);
-	store.notify(this.tiddler.title, true);
-};
-
-bidix.UploadLog.prototype.startUpload = function(storeUrl, toFilename, uploadDir,  backupDir) {
-	if (!this.tiddler)
-		return;
-	var now = new Date();
-	var text = &quot;\n| &quot;;
-	var filename = bidix.basename(document.location.toString());
-	if (!filename) filename = '/';
-	text += now.formatString(&quot;0DD/0MM/YYYY 0hh:0mm:0ss&quot;) +&quot; | &quot;;
-	text += config.options.txtUserName + &quot; | &quot;;
-	text += &quot;[[&quot;+filename+&quot;|&quot;+location + &quot;]] |&quot;;
-	text += &quot; [[&quot; + bidix.basename(storeUrl) + &quot;|&quot; + storeUrl + &quot;]] | &quot;;
-	text += uploadDir + &quot; | &quot;;
-	text += &quot;[[&quot; + bidix.basename(toFilename) + &quot; | &quot; +toFilename + &quot;]] | &quot;;
-	text += backupDir + &quot; |&quot;;
-	this.addText(text);
-};
-
-bidix.UploadLog.prototype.endUpload = function(status) {
-	if (!this.tiddler)
-		return;
-	this.addText(&quot; &quot;+status+&quot; |&quot;);
-};
-
-//
-// Utilities
-// 
-
-bidix.checkPlugin = function(plugin, major, minor, revision) {
-	var ext = version.extensions[plugin];
-	if (!
-		(ext  &amp;&amp; 
-			((ext.major &gt; major) || 
-			((ext.major == major) &amp;&amp; (ext.minor &gt; minor))  ||
-			((ext.major == major) &amp;&amp; (ext.minor == minor) &amp;&amp; (ext.revision &gt;= revision))))) {
-			// write error in PluginManager
-			if (pluginInfo)
-				pluginInfo.log.push(&quot;Requires &quot; + plugin + &quot; &quot; + major + &quot;.&quot; + minor + &quot;.&quot; + revision);
-			eval(plugin); // generate an error : &quot;Error: ReferenceError: xxxx is not defined&quot;
-	}
-};
-
-bidix.dirname = function(filePath) {
-	if (!filePath) 
-		return;
-	var lastpos;
-	if ((lastpos = filePath.lastIndexOf(&quot;/&quot;)) != -1) {
-		return filePath.substring(0, lastpos);
-	} else {
-		return filePath.substring(0, filePath.lastIndexOf(&quot;\\&quot;));
-	}
-};
-
-bidix.basename = function(filePath) {
-	if (!filePath) 
-		return;
-	var lastpos;
-	if ((lastpos = filePath.lastIndexOf(&quot;#&quot;)) != -1) 
-		filePath = filePath.substring(0, lastpos);
-	if ((lastpos = filePath.lastIndexOf(&quot;/&quot;)) != -1) {
-		return filePath.substring(lastpos + 1);
-	} else
-		return filePath.substring(filePath.lastIndexOf(&quot;\\&quot;)+1);
-};
-
-bidix.initOption = function(name,value) {
-	if (!config.options[name])
-		config.options[name] = value;
-};
-
-//
-// Initializations
-//
-
-// require PasswordOptionPlugin 1.0.1 or better
-bidix.checkPlugin(&quot;PasswordOptionPlugin&quot;, 1, 0, 1);
-
-// styleSheet
-setStylesheet('.txtUploadStoreUrl, .txtUploadBackupDir, .txtUploadDir {width: 22em;}',&quot;uploadPluginStyles&quot;);
-
-//optionsDesc
-merge(config.optionsDesc,{
-	txtUploadStoreUrl: &quot;Url of the UploadService script (default: store.php)&quot;,
-	txtUploadFilename: &quot;Filename of the uploaded file (default: in index.html)&quot;,
-	txtUploadDir: &quot;Relative Directory where to store the file (default: . (downloadService directory))&quot;,
-	txtUploadBackupDir: &quot;Relative Directory where to backup the file. If empty no backup. (default: ''(empty))&quot;,
-	txtUploadUserName: &quot;Upload Username&quot;,
-	pasUploadPassword: &quot;Upload Password&quot;,
-	chkUploadLog: &quot;do Logging in UploadLog (default: true)&quot;,
-	txtUploadLogMaxLine: &quot;Maximum of lines in UploadLog (default: 10)&quot;
-});
-
-// Options Initializations
-bidix.initOption('txtUploadStoreUrl','');
-bidix.initOption('txtUploadFilename','');
-bidix.initOption('txtUploadDir','');
-bidix.initOption('txtUploadBackupDir','');
-bidix.initOption('txtUploadUserName','');
-bidix.initOption('pasUploadPassword','');
-bidix.initOption('chkUploadLog',true);
-bidix.initOption('txtUploadLogMaxLine','10');
-
-
-// Backstage
-merge(config.tasks,{
-	uploadOptions: {text: &quot;upload&quot;, tooltip: &quot;Change UploadOptions and Upload&quot;, content: '&lt;&lt;uploadOptions&gt;&gt;'}
-});
-config.backstageTasks.push(&quot;uploadOptions&quot;);
-
-
-//}}}</pre>
-</div>
 <div created="20190129192358708" creator="Z" modified="20190129192621788" modifier="Z" title="upwelling, temperature and productivity">
 <pre>[[Teetar et al. 2018 | https://eos.org/research-spotlights/tool-to-capture-marine-biological-activity-gets-coastal-upgrade?utm_source=eos&amp;utm_medium=email&amp;utm_campaign=EosBuzz010419]]
 
@@ -23446,8 +22818,7 @@ config.backstageTasks.push(&quot;uploadOptions&quot;);
 <pre>https://cmgds.marine.usgs.gov/publications/of2007-1194/html/time.html</pre>
 </div>
 <div created="20190830142011648" creator="Z" modified="20190830142111160" modifier="Z" title="USGS Visual Identity">
-<pre>
-Aug 29, 2019, 10:30 AM 
+<pre>Aug 29, 2019, 10:30 AM 
 
 To sum up, your options are limited for USGS hosting and managing a website for a non-USGS organization. To break this all down:
 All USGS websites that are not considered &quot;web applications&quot; by the Web Reengineering Team are required to be hosted (per the Director/ELT) on www.usgs.gov. This site is standardized with a consistent design which includes the USGS Identifier. 
@@ -25566,8 +24937,7 @@ Human element
  &quot;ATTRIBUTE&quot; LIKE 'E%' AND NOT &quot;ATTRIBUTE&quot; LIKE '%FO%'</pre>
 </div>
 <div created="20160203185221835" modified="20160203185433149" tags="Wetland meeting" title="Wetland Synthesis Meeting">
-<pre>
-# Discuss data layers 
+<pre># Discuss data layers 
 # Develop baseline condition assessment
 # Develop scenarios and decide how to apply them
 # Develop synthesis products
