@@ -623,6 +623,8 @@ Error message and password prompt
 
 <li>PIEPR UVVR</li>
 
+<li>pip install not working</li>
+
 <li>plotting double axes</li>
 
 <li>plotting in WRDB GIS</li>
@@ -10897,8 +10899,8 @@ very-muted-foreground: #888888</pre>
 <div created="20201102220946346" modified="20201102220947062" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20201102220317328" creator="Z" modified="20201102221123515" modifier="Z" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20201102220317328" creator="Z" modified="20201104194843024" modifier="Z" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
@@ -10906,7 +10908,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20201102223959133" creator="Z" list="$:/ControlPanel [[Chesapeake shoreline and topobathy]] SHORELINES MainMenu" modified="20201102225329697" modifier="Z" title="$:/StoryList">
+<div created="20201102223959133" creator="Z" list="[[pip install not working]] Spyder [[Chesapeake shoreline and topobathy]] SHORELINES MainMenu" modified="20201104195242934" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10967,8 +10969,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20201102224125849" modifier="Z" title="$:/temp/search">
-<pre>shoreline ches</pre>
+<div created="20201102224059176" creator="Z" modified="20201104194832684" modifier="Z" title="$:/temp/search">
+<pre>pip install</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -18008,6 +18010,22 @@ def calc(val1, val2, val3):
 #''UVV02c.tif''
 #''Boundary clean''(UVV02c.tif; C:\Users\zdefne\Documents\ArcGIS\BB_arcgis\ParkerRiver\UVVR\UVV02c_bclean.tif; DESCEND;Two ways). One way boundary clean is not much different but two way seems to nibble both negligible land and negligible water. 
 #''Raster to Polygon''(UVV02c_bclean.tif; UVV02c_bclean_poly.shp)</pre>
+</div>
+<div created="20201104195144232" creator="Z" modified="20201104195344857" modifier="Z" tags="" title="pip install not working">
+<pre>;pip install doesn't work coplaining SSH certificate
+:Work around is below
+:https://stackoverflow.com/questions/25981703/pip-install-fails-with-connection-error-ssl-certificate-verify-failed-certi
+:and
+:https://github.com/JamesRamm/archook/issues/25
+```
+activate arcpro
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org pip git+https://github.com/JamesRamm/archook@master#egg=archook
+```
+
+Or
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org sciencebasepy</pre>
 </div>
 <div created="20150513134442896" modified="20150513134843200" title="plotting double axes">
 <pre>Alternative to plotyy
