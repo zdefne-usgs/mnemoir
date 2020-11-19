@@ -10901,8 +10901,8 @@ very-muted-foreground: #888888</pre>
 <div created="20201102220946346" modified="20201102220947062" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20201102220317328" creator="Z" modified="20201104194843024" modifier="Z" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20201102220317328" creator="Z" modified="20201119140608652" modifier="Z" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
@@ -10910,7 +10910,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20201116152647172" creator="Z" list="[[PYTHON in arcGIS]] [[NYSDEC synthesis]] [[NYSDEC shoreline change]] [[NYSDEC marsh shoreline calculations]] [[UVVR Landsat]]" modified="20201116230756723" modifier="Z" title="$:/StoryList">
+<div created="20201119140612306" creator="Z" list="[[topobathy from CoNED]] [[UVVR Landsat]]" modified="20201119140617273" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10974,8 +10974,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20201116230753615" modifier="Z" title="$:/temp/search">
-<pre>dap2arc</pre>
+<div created="20201102224059176" creator="Z" modified="20201119140605180" modifier="Z" title="$:/temp/search">
+<pre></pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -22630,7 +22630,7 @@ Earlier:
 #see plan.xls
 #CURVE FITTING: p+k-(p*k*exp(L*x))/(p+k*(exp(L*x)-1)); p=3265; k=1535;</pre>
 </div>
-<div created="20201019171620308" creator="Z" modified="20201112173726719" modifier="Z" title="topobathy from CoNED">
+<div created="20201019171620308" creator="Z" modified="20201119153055743" modifier="Z" title="topobathy from CoNED">
 <pre>&quot;&quot;&quot;
 See ''GEOPROCS'' folders under
 
@@ -22649,6 +22649,14 @@ Also ~4hrs comp time for Delaware?
 
 ;FEMA_R3
 :E:\GIS\FEMA_R3\GEOPROCS\compGridTopobathyFast_fema.py
+
+
+This fixes the empty array issue in the code:
+
+```
+x=np.array(NoDataVal)
+```
+
 </pre>
 </div>
 <div created="20170808160618178" creator="Z" modified="20170808161041016" modifier="Z" tags="sideProject" title="Trajectory software project with Goodwin">
