@@ -22630,7 +22630,7 @@ Earlier:
 #see plan.xls
 #CURVE FITTING: p+k-(p*k*exp(L*x))/(p+k*(exp(L*x)-1)); p=3265; k=1535;</pre>
 </div>
-<div created="20201019171620308" creator="Z" modified="20201123044518026" modifier="Z" title="topobathy from CoNED">
+<div created="20201019171620308" creator="Z" modified="20201123045444936" modifier="Z" title="topobathy from CoNED">
 <pre>&quot;&quot;&quot;
 See ''GEOPROCS'' folders under
 
@@ -22654,6 +22654,9 @@ Also ~4hrs comp time for Delaware?
 This fixes the empty array issue in the code:
 
 ```
+noDataVal = desc.noDataValue
+arcpy.AddMessage(&quot;NoDataVal: {0}&quot;.format(noDataVal))
+...
             if len(x)&lt;1:
                 x = np.array([noDataVal])
 ```
