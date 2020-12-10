@@ -10541,7 +10541,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20201119140612306" creator="Z" list="[[Exclusive coastal wetland selection (VEG)]] [[Inclusive coastal wetland selection]] [[National coastal wetland calculation]] [[CCAP meeting]] [[topobathy from CoNED]] [[UVVR Landsat]] [[UVVR National]]" modified="20201209203356935" modifier="Z" title="$:/StoryList">
+<div list="[[Exclusive coastal wetland selection (VEG)]] [[Inclusive coastal wetland selection]] [[National coastal wetland calculation]] [[CCAP meeting]] [[topobathy from CoNED]] [[UVVR Landsat]] [[UVVR National]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -14550,8 +14550,7 @@ N: Allocation for array sizes must be NUMFLOW not NOSEG
       Allocate (BRINTT(NOSEG))</pre>
 </div>
 <div created="20201209224449269" creator="Z" modified="20201209224535905" modifier="Z" tags="" title="Inclusive coastal wetland selection">
-<pre>
-```
+<pre>```
 ATTRIBUTE LIKE 'E2%' 
 OR 
 (
@@ -16748,7 +16747,7 @@ Syncback is programmed to sync laptop and desktop between ''D:/Documents/Matlab'
 
 </pre>
 </div>
-<div created="20190326160251864" creator="Z" modified="20201209224813297" modifier="Z" title="National coastal wetland calculation">
+<div created="20190326160251864" creator="Z" modified="20201210025920792" modifier="Z" title="National coastal wetland calculation">
 <pre>;Also see
 :[[UVVR Landsat]]
 
@@ -16765,7 +16764,7 @@ Include
 E:\GIS\Landsat_UVVR\SQL Query\E2_with_saltw_freshw_tidal_wo_nontidal_ver10.exp
 
 
-''see''
+''Older query''
 E:\GIS\Landsat_UVVR\SQL Query\E2_with_saltw_freshw_tidal_with_mod_noMEL1.exp
 
 &quot;&quot;&quot;
@@ -22359,11 +22358,30 @@ Earlier:
 #see plan.xls
 #CURVE FITTING: p+k-(p*k*exp(L*x))/(p+k*(exp(L*x)-1)); p=3265; k=1535;</pre>
 </div>
-<div created="20201019171620308" creator="Z" modified="20201209203913166" modifier="Z" title="topobathy from CoNED">
+<div created="20201019171620308" creator="Z" modified="20201210030059798" modifier="Z" title="topobathy from CoNED">
 <pre>;Coned data
 :Coned Chesapeake mask to clip FEMA_R3 grid
 :E:\GIS\TEMPORARY\CONED_ches_delaw
 
+;instructions
+:&quot;&quot;&quot;
+dap2arc to create shp from FEMA adcirc grid (WGS84)
+reclasify coned raster to create coned mask raster
+coned mask raster to coned mask polygon with raster to polygon
+project mask polygon to WGS84
+select from FEMA grid with the mask polygon WGS84 (contains completely)
+export selected features and project to UTM (tides_FEMA_R3_riv_ches_utm)
+repair geometry
+
+''note''
+~2% of the cells are not exported after selection. (projection issue?)
+select them by:
+Erase ches_utm - coned_utm
+single part features
+convert to points using centroids
+select from FEMA_grid using centroid points
+follow the same steps above
+&quot;&quot;&quot;
 
 &quot;&quot;&quot;
 See ''GEOPROCS'' folders under
