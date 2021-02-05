@@ -529,8 +529,6 @@ Error message and password prompt
 
 <li>MARS metrics</li>
 
-<li>Marsh collaboration with Kathryn Smith</li>
-
 <li>Marsh condition change layer</li>
 
 <li>Marsh edge detection paper</li>
@@ -10543,7 +10541,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210127203323934" creator="Z" list="[[wrfhydro tests]] WRFHYDRO [[Hurricane Florence]] [[Marsh collaboration with Kathryn Smith]]" modified="20210127203638189" modifier="Z" title="$:/StoryList">
+<div created="20210128175002213" creator="Z" list="[[Hurricane Florence]] [[National coastal wetland calculation]] [[wrfhydro tests]]" modified="20210205234742519" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10607,8 +10605,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210127203623770" modifier="Z" title="$:/temp/search">
-<pre>wrf</pre>
+<div created="20201102224059176" creator="Z" modified="20210205234737080" modifier="Z" title="$:/temp/search">
+<pre>florence</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -14399,18 +14397,42 @@ meeting.</pre>
 :071tR\forcing_bulk
 :effect of rain</pre>
 </div>
-<div created="20200930011826621" creator="Z" modified="20210127204000807" modifier="Z" title="Hurricane Florence">
+<div created="20200930011826621" creator="Z" modified="20210205235519718" modifier="Z" title="Hurricane Florence">
 <pre>;see
-:wrfhydro Florence tests notes and wrfhydro notes
-:[[wrfhydro tests]]
-:[[WRFHYDRO]]
-
 :[[ESRI hurricane info]]
 
-!!!GIS animations
+!!GIS animations
 ;Test WMS and ~OpenDAP with arcpro
 :E:\GIS\TEMPORARAY\test\test.aprx
 :import opendap deosn't work because of speed of response or because of irregular grid??
+:when it worked it took 7-8 hrs for one Coawst US east variable? 
+
+;~OpenDap to raster suing Python tools
+:activate zarr
+:D:\Documents\PYTHON\netcdf2raster
+:netcdf2raster.ipynb
+:wrf2raster.ipynb
+;
+:E:\GIS\netcdf2raster
+
+
+;subsample/subset data using nco
+:install nco in python
+
+;nco
+```
+concatenate temp for level 16 of s_rho from multiple files
+ncrcat -v temp -d s_rho,15 coawst_us_201302?????.nc /usgs/users/zdefne/WRF/sst201302.nc
+
+subsample xi and eta dimensions
+ncrcat -v temp -d s_rho,15 -d xi_rho,1,,10 -d eta_rho,1,,10 coawst_us_201302?????.nc /usgs/users/zdefne/WRF/sst_reduced_201302.nc
+
+subsample, resample, reduce size of the netcdf file
+hyperslab are specified with the -d dim,[min][,[max][,[stride]]] 
+ncks -d ocean_time,1,,2 temp201302.nc sst_daily201302.nc
+```
+
+
 </pre>
 </div>
 <div changecount="55" created="20120524194300000" creator="Zafer" modified="20190612215243395" modifier="Z" tags="linkage WASP notes" title="Hydrolink Linkage" type="text/vnd.tiddlywiki">
@@ -15905,28 +15927,6 @@ if entire polygon has nan raster cells a single nan value is assigned and skewne
 :old code runs from Spyder with arcpy and archook)
 :calculates the lowest third 
 </pre>
-</div>
-<div created="20210126154702643" creator="Z" modified="20210126154834053" modifier="Z" tags="" title="Marsh collaboration with Kathryn Smith">
-<pre>;Neil 
-expand marsh slope 
-migration rates from modern day lidar compare to slope
-
-mangrove change 
-NASA develop
-mangrove dieback because of freezing
-Landsat UVVR wirks well for identifying it
-Mike Osland, USGS Lafayette
-
-SC,GA comparison with insitu
-Davina
-Kristin Byrd
-
-;Kathryn
-3 dates for shorelines for marsh 
-shoreline cahnge research and pass it to TCA 
-WorldView from Maxar (digital globe)
-Calibrate with NAIP
-calculate NDVI from there</pre>
 </div>
 <div created="20170224224313535" creator="Z" modified="20170608214147459" modifier="Z" tags="Wetland" title="Marsh condition change layer">
 <pre>../[[Wetland synthesis model layers]]
@@ -25207,15 +25207,11 @@ This procedure will help isolate problems which may otherwise be difficult and/o
 8. After all that and calibration, then run coupled WRF-Hydro
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20200204212844798" creator="Z" modified="20210127204028890" modifier="Z" title="wrfhydro tests">
+<div created="20200204212844798" creator="Z" modified="20200204212910925" modifier="Z" title="wrfhydro tests">
 <pre>;Also see
 :[[WRFHYDRO]]
-
 ;Main folder (on LTZDE10)
 :D:/GIS/WRFhydro/
-:Notes
-:D:\GIS\WRFhydro\OUTPUT\''Florence_wrfhydro_prelim_results.docx''
-
 ;More documentation on LTZDE10 under  
 :D:/wrfhydro</pre>
 </div>
