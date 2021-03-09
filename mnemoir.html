@@ -669,6 +669,8 @@ Error message and password prompt
 
 <li>RCM</li>
 
+<li>read_vdatum_gtx</li>
+
 <li>Reading TO DO</li>
 
 <li>reedy and dinner</li>
@@ -10548,7 +10550,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210218171554587" creator="Z" list="[[Earth Explorer]] [[CMG Portal]] [[Docker notes]] [[ISO XML]] [[ISO metadata additional information]] [[oxygen xml editor]]" modified="20210304194212536" modifier="Z" title="$:/StoryList">
+<div created="20210218171554587" creator="Z" list="read_vdatum_gtx [[Tidal range layer]] [[Earth Explorer]] [[CMG Portal]] [[Docker notes]] [[ISO XML]] [[ISO metadata additional information]] [[oxygen xml editor]]" modified="20210309220614940" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10612,8 +10614,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210305185818049" modifier="Z" title="$:/temp/search">
-<pre>iso metadata</pre>
+<div created="20201102224059176" creator="Z" modified="20210309221223280" modifier="Z" title="$:/temp/search">
+<pre>v</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -18545,6 +18547,58 @@ Expensive parser function count: 0/100
 
 </pre>
 </div>
+<div created="20210309221317652" creator="Z" modified="20210309221553786" modifier="Z" tags="" title="read_vdatum_gtx">
+<pre>;from
+:D:\Documents\MATLAB\CMGSOFT\cmgsoft_m-cmg\trunk\RPSstuff
+;or from
+:D:\Documents\MATLAB\tools\RPSstuff
+
+```
+function [b,lon,lat]=read_vdatum_gtx(gtxfile);
+% READ_VDATUM_GTX  Read NOAA Vdatum GTX binary grid file format (.gtx)
+% (reference: http://vdatum.noaa.gov/dev/gtx_info.html#dev_gtx_binary)
+% Usage: [data,lon,lat]=read_vdatum_gtx(gtxfile);
+% Input:  gtxfile = VDatum GTX grid file name (string), e.g. 'mllw.gtx'  
+% Output: data = 2D array of data values (double)
+%         lon = vector array of longitudes (double)
+%         lat = vector of latitudes (real)
+% Example: 
+%  [data,lon,lat]=read_vdatum_gtx('c:/rps/vdatum/MENHMAgome01_8301/mllw.gtx');
+%  imagesc(lon,lat,data);axis xy
+%  set(gca,'DataAspectRatio',[1 cos(mean(lat(:))*pi/180) 1000]);
+%  colorbar
+
+% Rich Signell (rsignell@usgs.gov)
+
+a=fopen(gtxfile,'r','ieee-be');  % java binary is big-endian
+% read corner and increment lon,lat values as double 
+b=fread(a,4,'float64'); % read 4 lat/lon vals as double
+lat0=b(1);
+lon0=b(2);
+dlat=b(3);
+dlon=b(4);
+
+% read nlon,nlat array size values as integer
+b=fread(a,2,'int'); 
+nlat=b(1); % number of lon/rows
+nlon=b(2); % number of lat/columns
+
+lat=lat0+[0:nlat-1]*dlat;
+lon=lon0+[0:nlon-1]*dlon;
+
+% read data array as float
+b=fread(a,[nlon,nlat],'float32');
+fclose(a);
+b=permute(b,[2 1]);
+
+% null values are supposed to be -88.8888, but they turn out to be 
+% numbers like -88.8888015747, so we have to look within a tolerance: 
+b(b&gt;-88.8889&amp;b&lt;-88.8887)=nan; 
+
+
+```
+</pre>
+</div>
 <div changecount="1" created="20140130164800000" creator="scylla" modified="20160619212718911" modifier="scylla" title="Reading TO DO" type="text/vnd.tiddlywiki">
 <pre>READING TO DO
 
@@ -22362,8 +22416,13 @@ volume_flux.m for calculating river and tidal discharges
 {{{C:\Users\zdefne\Documents\MATLAB\BB_matlab\RUNS\run027\WL}}}
 {{{tidal_prisms_overlaying_Hmean.png}}} shows prisms calculated using a maximum fllood and a maximum tidal range at each grid point, overlaying a map of mean tidal range. </pre>
 </div>
-<div created="20161021204241219" creator="Z" modified="20180723203753603" modifier="Z" tags="Wetland data metadata arcGIS" title="Tidal range layer">
+<div created="20161021204241219" creator="Z" modified="20210309221650989" modifier="Z" tags="Wetland data metadata arcGIS" title="Tidal range layer">
 <pre>!!Tidal range
+;UPDATE 2:
+this uses the code from CMGSOFT repository
+[[read_vdatum_gtx]]
+
+
 ;UPDATE
 :Below are notes from previous approaches. But recently using Vdatum database directly through matlab is the easiest. 
 #See D:\GIS\PIEPR\MN\matlab\''vdatum_tidal_range_PIEPR.m''
