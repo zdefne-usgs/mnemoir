@@ -10554,7 +10554,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210315135629459" creator="Z" list="[[National coastal wetland calculation]] [[Coned and Landsat UVVR]] [[topobathy from CoNED]] CoNed MainMenu [[Screen capture tools]] [[Arcgis toolboxes and python codes]] read_vdatum_gtx [[Tidal range layer]] [[Earth Explorer]] [[CMG Portal]] [[Docker notes]] [[ISO XML]] [[ISO metadata additional information]] [[oxygen xml editor]]" modified="20210315135820903" modifier="Z" title="$:/StoryList">
+<div created="20210326154453016" creator="Z" list="[[Poseidon cluster]] [[Scylla software and environment]] [[Model data release]] [[ISO XML]] [[ISO metadata additional information]] [[oxygen xml editor]]" modified="20210329203803840" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10618,8 +10618,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210315135623973" modifier="Z" title="$:/temp/search">
-<pre>huc</pre>
+<div created="20201102224059176" creator="Z" modified="20210329203757814" modifier="Z" title="$:/temp/search">
+<pre>poseidon</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -16843,7 +16843,7 @@ Syncback is programmed to sync laptop and desktop between ''D:/Documents/Matlab'
 
 </pre>
 </div>
-<div created="20190326160251864" creator="Z" modified="20210315135944817" modifier="Z" title="National coastal wetland calculation">
+<div created="20190326160251864" creator="Z" modified="20210113230524277" modifier="Z" title="National coastal wetland calculation">
 <pre>;Also see
 :[[UVVR Landsat]]
 
@@ -16876,11 +16876,9 @@ ATTRIBUTE LIKE 'E2%' OR (ATTRIBUTE LIKE '%L_' Or ATTRIBUTE LIKE '%N_' Or ATTRIBU
 Need to include only a subclassification selecting only the vegetated areas
 &quot;&quot;&quot;
 
-;by Estuaries:
+;Tests:
 :&quot;&quot;&quot;
-''HUCs from''
-National Hydrography Dataset Plus High Resolution (NHDPlus HR) Availability Map
-https://usgs.maps.arcgis.com/apps/MapTools/index.html?appid=41a5c2ca49bd4a83b239450e61022d53
+HUC by HUC at Birdfoot, Ches, Everglade and Puget
 
 ''see''
 E:\GIS\NWI\HUCS
@@ -17967,8 +17965,14 @@ Statistics toolbox
 :https://geoport.usgs.esipfed.org/
 :https://geoport.usgs.esipfed.org/wms/datasets/ec2015_power/show</pre>
 </div>
-<div created="20190129190809724" creator="Z" modified="20190129191054376" modifier="Z" title="Poseidon cluster">
-<pre>In addition to the standard compute nodes, we (USGS) now have 10 dedicated nodes for our priority usage. This is 10*36=360 cores. You can still use your standard run_poseidon commands for the general compute partition, or you can choose to access the USGS nodes. Here is an example of my run file:
+<div created="20190129190809724" creator="Z" modified="20210329203921084" modifier="Z" title="Poseidon cluster">
+<pre>;running on the cluster nodes
+```
+srun -p compute --ntasks-per-node=4 --mem=16G --time=03:00:00 --pty bash
+```
+
+
+In addition to the standard compute nodes, we (USGS) now have 10 dedicated nodes for our priority usage. This is 10*36=360 cores. You can still use your standard run_poseidon commands for the general compute partition, or you can choose to access the USGS nodes. Here is an example of my run file:
 
 ```
 File is:   runposeidon-mpi-2.sh
