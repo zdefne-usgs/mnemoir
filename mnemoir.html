@@ -17965,12 +17965,13 @@ Statistics toolbox
 :https://geoport.usgs.esipfed.org/
 :https://geoport.usgs.esipfed.org/wms/datasets/ec2015_power/show</pre>
 </div>
-<div created="20190129190809724" creator="Z" modified="20210329203921084" modifier="Z" title="Poseidon cluster">
+<div created="20190129190809724" creator="Z" modified="20210329203951172" modifier="Z" title="Poseidon cluster">
 <pre>;running on the cluster nodes
 ```
 srun -p compute --ntasks-per-node=4 --mem=16G --time=03:00:00 --pty bash
 ```
 
+;Notes from initial release
 
 In addition to the standard compute nodes, we (USGS) now have 10 dedicated nodes for our priority usage. This is 10*36=360 cores. You can still use your standard run_poseidon commands for the general compute partition, or you can choose to access the USGS nodes. Here is an example of my run file:
 
