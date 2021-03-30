@@ -10554,7 +10554,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210326154453016" creator="Z" list="[[Poseidon cluster]] [[Scylla software and environment]] [[Model data release]] [[ISO XML]] [[ISO metadata additional information]] [[oxygen xml editor]]" modified="20210329203803840" modifier="Z" title="$:/StoryList">
+<div created="20210330201837709" creator="Z" list="[[UVVR Landsat]] [[National coastal wetland calculation]] [[Exclusive coastal wetland selection (VEG)]] [[Poseidon cluster]]" modified="20210330215545793" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10618,8 +10618,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210329203757814" modifier="Z" title="$:/temp/search">
-<pre>poseidon</pre>
+<div created="20201102224059176" creator="Z" modified="20210330215535165" modifier="Z" title="$:/temp/search">
+<pre>mean uvvr</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -17965,15 +17965,8 @@ Statistics toolbox
 :https://geoport.usgs.esipfed.org/
 :https://geoport.usgs.esipfed.org/wms/datasets/ec2015_power/show</pre>
 </div>
-<div created="20190129190809724" creator="Z" modified="20210329203951172" modifier="Z" title="Poseidon cluster">
-<pre>;running on the cluster nodes
-```
-srun -p compute --ntasks-per-node=4 --mem=16G --time=03:00:00 --pty bash
-```
-
-;Notes from initial release
-
-In addition to the standard compute nodes, we (USGS) now have 10 dedicated nodes for our priority usage. This is 10*36=360 cores. You can still use your standard run_poseidon commands for the general compute partition, or you can choose to access the USGS nodes. Here is an example of my run file:
+<div created="20190129190809724" creator="Z" modified="20190129191054376" modifier="Z" title="Poseidon cluster">
+<pre>In addition to the standard compute nodes, we (USGS) now have 10 dedicated nodes for our priority usage. This is 10*36=360 cores. You can still use your standard run_poseidon commands for the general compute partition, or you can choose to access the USGS nodes. Here is an example of my run file:
 
 ```
 File is:   runposeidon-mpi-2.sh
@@ -22880,7 +22873,7 @@ Charlie Endris &lt;charlie@elkhornslough.org&gt;,
 :-U.S. Geological Survey, Coastal and Marine Hazards/Resources Program
 </pre>
 </div>
-<div created="20200722202548508" creator="Z" modified="20201209203443244" modifier="Z" title="UVVR Landsat">
+<div created="20200722202548508" creator="Z" modified="20210330215939463" modifier="Z" title="UVVR Landsat">
 <pre>;see
 :[[National coastal wetland calculation]]
 :[[UVVR National]]
@@ -22959,8 +22952,8 @@ which supposedly should also be similar to
 ATL_band4_composite_mean
 but it shouldn't be because mean of the ratios is not equal to the ratio of the means
 
-mean of uvvr1=5u5v and uvvr2=1u9v is 1.056/2 = 0.528
-uvvr of the mean is (1u/10+5u/10)/2 = 3u/10= 3u/7v = 0.429
+mean of uvvr1=5u5v and uvvr2=1u9v is (uvvr1 + uvvr2)/2 = (1 + 0.11)/2 = 0.556
+uvvr of the mean is (5u/10 + 1u/10)/2 = 3u/10= 3u/7v = 0.429
 &quot;&quot;&quot;
 </pre>
 </div>
