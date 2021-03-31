@@ -10554,7 +10554,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210330201837709" creator="Z" list="[[Arcgis toolboxes and python codes]] [[UVVR Landsat]] [[National coastal wetland calculation]] [[Exclusive coastal wetland selection (VEG)]] [[Poseidon cluster]]" modified="20210331134419577" modifier="Z" title="$:/StoryList">
+<div created="20210330201837709" creator="Z" list="[[Scylla jobs]] [[Scylla software and environment]] [[Arcgis toolboxes and python codes]] [[UVVR Landsat]] [[National coastal wetland calculation]] [[Exclusive coastal wetland selection (VEG)]] [[Poseidon cluster]]" modified="20210331135326950" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10618,8 +10618,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210331134407427" modifier="Z" title="$:/temp/search">
-<pre>arcpy</pre>
+<div created="20201102224059176" creator="Z" modified="20210331135352597" modifier="Z" title="$:/temp/search">
+<pre>poseidon cluster</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -17972,8 +17972,14 @@ Statistics toolbox
 :https://geoport.usgs.esipfed.org/
 :https://geoport.usgs.esipfed.org/wms/datasets/ec2015_power/show</pre>
 </div>
-<div created="20190129190809724" creator="Z" modified="20190129191054376" modifier="Z" title="Poseidon cluster">
-<pre>In addition to the standard compute nodes, we (USGS) now have 10 dedicated nodes for our priority usage. This is 10*36=360 cores. You can still use your standard run_poseidon commands for the general compute partition, or you can choose to access the USGS nodes. Here is an example of my run file:
+<div created="20190129190809724" creator="Z" modified="20210331135407785" modifier="Z" title="Poseidon cluster">
+<pre>;running on the cluster nodes
+```
+srun -p compute --ntasks-per-node=4 --mem=16G --time=03:00:00 --pty bash
+```
+
+;Notes from initial release
+In addition to the standard compute nodes, we (USGS) now have 10 dedicated nodes for our priority usage. This is 10*36=360 cores. You can still use your standard run_poseidon commands for the general compute partition, or you can choose to access the USGS nodes. Here is an example of my run file:
 
 ```
 File is:   runposeidon-mpi-2.sh
