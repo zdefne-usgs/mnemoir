@@ -589,8 +589,6 @@ Error message and password prompt
 
 <li>Moved Matlab folders</li>
 
-<li>multidimensional raster</li>
-
 <li>National coastal wetland calculation</li>
 
 <li>NCO netcdf operators</li>
@@ -10560,7 +10558,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210402125452630" creator="Z" list="[[multidimensional raster]] yaml2ncml [[EPA interest in UVVR]] DigitalCoast [[CCAP meeting]] [[JAVA business]] [[ISO XML]] [[UVVR Landsat]] [[National coastal wetland calculation]] [[Exclusive coastal wetland selection (VEG)]] [[Poseidon cluster]]" modified="20210406143054858" modifier="Z" title="$:/StoryList">
+<div created="20210416215659939" creator="Z" list="[[python in Arcgis pro]] [[UVVR Landsat]]" modified="20210416220947306" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10624,8 +10622,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210407133829845" modifier="Z" title="$:/temp/search">
-<pre>multidimensional</pre>
+<div created="20201102224059176" creator="Z" modified="20210416215654751" modifier="Z" title="$:/temp/search">
+<pre>arcgis python</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -16924,14 +16922,6 @@ Syncback is programmed to sync laptop and desktop between ''D:/Documents/Matlab'
 
 </pre>
 </div>
-<div created="20210407133833741" creator="Z" modified="20210407133918916" modifier="Z" tags="" title="multidimensional raster">
-<pre>;also 
-:image server
-
-;Create Multidimensional Raster Data Using a Single netCDF , GRIB, or HDF File
-:https://www.youtube.com/watch?v=sR0_aEU6brA
-</pre>
-</div>
 <div created="20190326160251864" creator="Z" modified="20210113230524277" modifier="Z" title="National coastal wetland calculation">
 <pre>;Also see
 :[[UVVR Landsat]]
@@ -18364,7 +18354,7 @@ C:\Users\zdefne\Documents\ArcGIS\My_Scripts
 C=raw_input('C=?')
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20201002141719230" creator="Z" modified="20201112173603225" modifier="Z" title="python in Arcgis pro">
+<div created="20201002141719230" creator="Z" modified="20210416221803468" modifier="Z" title="python in Arcgis pro">
 <pre>aka. arcpy in arcpro
 
 &quot;&quot;&quot;
@@ -18376,7 +18366,18 @@ You can access this environment by launching Python from the links inside the
 
 Or by running the proenv.bat file in the terminal:
      C:\&gt; C:\~ArcGIS\Pro\bin\python\scripts\proenv.bat
-&quot;&quot;&quot;</pre>
+&quot;&quot;&quot;
+
+;Python environments in Arcgis Pro
+:trying this for arcgispro-py3-zarr seems added the environment
+:https://community.esri.com/t5/python-questions/can-t-clone-python-environment-with-arcgis-pro-2-4-2/m-p/513201#M40309
+:&quot;&quot;&quot;
+
+Copy and paste the default, read-only 'arcgispro-py3' env in 'C:\Program Files\ArcGIS\Pro\bin\Python\envs' to 'C:\Users\[username]\AppData\Local\ESRI\conda\envs'  ~~I created a new directory on my C: drive and pasted the copied directory there. (C:\ArcGIS_Pro\Conda\Cloned_Envs)~~
+Rename the folder to be unique (e.g. 'arcgispro-py3-username')
+Open ArcGIS Pro, then Package Manager, and activate the env (Note that a new 'proenv.txt' file is added to the env folder. I am not sure what this does, but it lists the folder of the newly create env.)
+&quot;&quot;&quot;
+</pre>
 </div>
 <div created="20181017223647749" creator="Z" modified="20190405210546638" modifier="Z" tags="Python" title="Python notes">
 <pre>;Accessing multiple fields at once
