@@ -419,6 +419,8 @@ Error message and password prompt
 
 <li>Draft of 'Chesapeake Program Links'</li>
 
+<li>Draft of 'ISO XML' by Z</li>
+
 <li>Draft of 'MEG notes'</li>
 
 <li>DSAS Addin</li>
@@ -502,6 +504,8 @@ Error message and password prompt
 <li>ISO metadata additional information</li>
 
 <li>ISO XML</li>
+
+<li>ISO XML People</li>
 
 <li>JAVA business</li>
 
@@ -10560,7 +10564,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210420023959294" creator="Z" list="[[ISO XML]] [[UVVR National]] [[UNIX, LINUX, WINDOWS, MATLAB COMMANDS]] [[WMS style]] [[Docker notes]] PORTALS [[python in Arcgis pro]] [[UVVR Landsat]]" modified="20210422191632733" modifier="Z" title="$:/StoryList">
+<div created="20210420023959294" creator="Z" list="[[ISO XML People]] [[Draft of 'ISO XML' by Z]] [[UVVR National]] [[UNIX, LINUX, WINDOWS, MATLAB COMMANDS]] [[WMS style]] [[Docker notes]] PORTALS [[python in Arcgis pro]] [[UVVR Landsat]]" modified="20210422191632733" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -13315,6 +13319,117 @@ Shorebirds EBRNWR
 https://www.sciencebase.gov/catalog/file/get/58135e56e4b0d63fd467b7ea?f=__disk__05%2F00%2F52%2F0500523ef48ea3f97cce74cfe9608d9cd07c2bb2&amp;transform=1&amp;allowOpen=true
 &quot;&quot;&quot;</pre>
 </div>
+<div created="20180110225807313" creator="Z" draft.of="ISO XML" draft.title="ISO XML" modified="20210422194007094" modifier="Z" tags="data" title="Draft of 'ISO XML' by Z">
+<pre>;new location alias for gamone, geoport  servers
+:geoport.usgs.esipfed.org
+
+;See my ocean ISO metadata github page
+:https://github.com/zdefne-usgs/ocean-iso-metadata
+
+;final decision about units
+:&quot;&quot;&quot;
+use UCUM
+https://raw.githubusercontent.com/zdefne-usgs/ocean-iso-metadata/master/UCUM/CSIRO_SEEGRID_units_am.xml 
+or UDUNITS
+https://docs.unidata.ucar.edu/thredds/udunits2-java/current/udunits2_combined.xml 
+&quot;&quot;&quot;
+
+;Alaska center method (mdEditor with json)
+:https://www.fgdc.gov/organization/working-groups-subcommittees/mwg/meetings/april-2018/
+
+;~VeeAnn's comment to Taran `&lt;srv:operatesOn xlink:href=&quot;#DataIdentification&quot;/&gt;`
+
+:[[ISO metadata additional information]]
+
+!!ISO 19115 guide
+
+:&quot;&quot;&quot;
+ISO-TC211/XML
+https://github.com/ISO-TC211/XML/tree/master/schemas.isotc211.org
+and 
+https://schemas.isotc211.org/schemas/
+
+ISO 19115 Resorces
+https://standards.iso.org/iso/19115/resources
+
+NOAA NGDC
+https://ngdc.noaa.gov/wiki/index.php/Main_Page
+
+NOAA CodeList Dictionaries
+https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries
+
+NOAA ISO building blocks
+https://geo-ide.noaa.gov/wiki/index.php?title=Category:ISO_Building_Blocks#Spiral_One:_Quick_UML_Introduction
+
+https://geo-ide.noaa.gov/wiki/index.php?title=MI_Metadata
+
+units
+https://geo-ide.noaa.gov/wiki/index.php?title=Units
+OR
+http://www.datypic.com/sc/niem21/e-gmd_units-1.html
+OR
+http://unitsofmeasure.org/ucum-essence.xml
+and
+https://www.seegrid.csiro.au/subversion/xmml/OGC/trunk/ExampleInstances/dictionaries/units.xml  
+
+See an example here
+D:\Documents\GitHub\ocean-iso-metadata\UCUM\''CSIRO_SEEGRID_units_am.xml''
+and here
+https://github.com/zdefne-usgs/ocean-iso-metadata/tree/master/UCUM
+
+Implementation for the national library of medicine
+https://github.com/lhncbc/ucum-lhc
+
+
+&quot;&quot;&quot;
+
+;Uniform Resource Name Resolver Tool
+:http://www.opengeospatial.org/ogcna
+
+
+;Compare ISO generators
+:D:\Documents\DATA RELEASE\ISOcompare
+#geoport
+#geoport-dev
+#standalone ISO from https://github.com/NOAA-PMEL/uafnciso
+#use command 
+```
+java -Xms1024m -Xmx1024m -jar ncISO-2.3.4.jar -ts http://geoport-dev.whoi.edu/thredds/sand/usgs/Projects/BBLEH/run071tRX/catalog.xml -num 1 -depth 20 -iso true 
+```
+;see 
+:Chrome bookmarks  Meta &gt; ISO generators
+
+
+
+!! Solution to units mess!
+&quot;&quot;&quot;
+What ~VeeAnn suggests is a text file with units and their spelled out definition:
+e.g. unit and its spelled out definition:
+day-1
+quantity per day 
+or maybe:
+day-1
+one over day
+
+I think a better solution is to create our own units xml for all of the units following this example
+https://www.seegrid.csiro.au/subversion/xmml/OGC/trunk/ExampleInstances/dictionaries/units.xml  
+
+merge SI, SI_common, SI_derrived, non_SI etc. all in one xml file and upload it together with the data release to the Sciencebase page. Use that as the permanent xlinks to unitsfor that data release. 
+
+~~On a side note if we implement it this way we do not need the xlink for units I believe
+https://geo-ide.noaa.gov/wiki/index.php?title=MI_CoverageDescription ~~
+&quot;&quot;&quot;
+
+
+;FGDC to ISO transformations
+:&quot;&quot;&quot;
+transforms from FGDC-STD-001-1998 XML (CSGDM) into ISO 19115-2:2009(E) XML;
+transforms from FGDC-STD-001.1-1999 XML (BIO) into ISO 19115-2:2009(E) XML;
+transforms from FGDC-STD-12-2002 XML (RSE) into ISO 19115-2:2009(E) XML;
+transforms from FGDC Section 5 metadata, Entity and Attributes, into the ISO 19110 Feature Catalogue;
+and, transforms of FGDC geospatial metadata to ISO 19139, the geospatial implementation schema for ISO19115;
+&quot;&quot;&quot;</pre>
+</div>
 <div created="20200423020918261" creator="Z" modified="20200423020919812" modifier="Z" title="Draft of 'MEG notes'">
 <pre>;aka
 :model evaluation group
@@ -14889,6 +15004,25 @@ transforms from FGDC-STD-001.1-1999 XML (BIO) into ISO 19115-2:2009(E) XML;
 transforms from FGDC-STD-12-2002 XML (RSE) into ISO 19115-2:2009(E) XML;
 transforms from FGDC Section 5 metadata, Entity and Attributes, into the ISO 19110 Feature Catalogue;
 and, transforms of FGDC geospatial metadata to ISO 19139, the geospatial implementation schema for ISO19115;
+&quot;&quot;&quot;</pre>
+</div>
+<div created="20210422193953092" creator="Z" modified="20210422194235889" modifier="Z" tags="" title="ISO XML People">
+<pre>;Lisa Zolly
+:USGS Denver, Colorado
+;Vivian Hutchison
+:Branch Chief, Science Data Management, Core Science Systems
+
+[[Content Specifications to Enable USGS Transition to ISO Metadata Standard|https://www.sciencebase.gov/catalog/item/5acd27a0e4b0e2c2dd155e01]]
+
+;Principal Investigator:
+:Dennis H Walworth
+;Co-Investigator :
+:Frances L Lightsom
+;Cooperator/Partner :
+:Andrew E ~LaMotte, Lisa Zolly, Tara M Bell, Sophie Hou, Joshua Bradley, Jennifer L Walter, Anna Milan
+;CMS Group :
+:Community for Data Integration - CDI
+
 &quot;&quot;&quot;</pre>
 </div>
 <div created="20210405144558666" creator="Z" modified="20210405144949491" modifier="Z" tags="" title="JAVA business">
