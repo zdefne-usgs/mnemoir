@@ -10564,7 +10564,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210420023959294" creator="Z" list="[[Coned and Landsat UVVR]] [[Compare Landsat to NAIP UVVR]] [[WMS style]] [[Docker notes]] PORTALS [[python in Arcgis pro]] [[UVVR Landsat]]" modified="20210427191456089" modifier="Z" title="$:/StoryList">
+<div created="20210430025853703" creator="Z" list="[[Arcgis toolboxes and python codes]] [[Coned and Landsat UVVR]] [[Compare Landsat to NAIP UVVR]] [[WMS style]] [[Docker notes]] PORTALS [[python in Arcgis pro]] [[UVVR Landsat]]" modified="20210430025853703" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10628,8 +10628,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210427193322876" modifier="Z" title="$:/temp/search">
-<pre></pre>
+<div created="20201102224059176" creator="Z" modified="20210430025953712" modifier="Z" title="$:/temp/search">
+<pre>zonal</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -12332,18 +12332,23 @@ Graphical user interface (object based)
 #output class (netcdf files)
 </pre>
 </div>
-<div created="20210423173638009" creator="Z" modified="20210428040019696" modifier="Z" tags="" title="Compare Landsat to NAIP UVVR">
+<div created="20210423173638009" creator="Z" modified="20210430032540866" modifier="Z" tags="" title="Compare Landsat to NAIP UVVR">
 <pre>;see
 :[[UVVR National]]
 :[[UVVR Landsat]]
 :[[UVVR change paper]]
 
-#create random points (&gt;50m apart)
+;01createRandPoints
+#create random points (&gt;50m apart). 
+;04naip2landsat 
 #extract by mask from Landsat using points
 #convert raster to integer. Int(raster)
 #project raster to UTM
-#convert UVVc to float. Float(UVVc)
-#run extractByPolyParts under GEOPROCS_GENERAL. latest folder is FIIS
+#(not sure if this is used)convert UVVc to float. Float(UVVc)
+# two options here
+##run extractByPolyParts under GEOPROCS_GENERAL. latest folder is FIIS
+##or use zonalTable 2Feat tool
+#can compare the results to ''02compareLandsatNaipV2'' to see they are different
 
 ;folders
 :&quot;&quot;&quot;
