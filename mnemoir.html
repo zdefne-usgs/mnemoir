@@ -12133,7 +12133,7 @@ All files are there but Downloads folder was used as cratch folder for processin
 
 </pre>
 </div>
-<div created="20210504132633235" creator="Z" modified="20210513033752781" modifier="Z" tags="" title="CLOUD stuff">
+<div created="20210504132633235" creator="Z" modified="20210513034303118" modifier="Z" tags="" title="CLOUD stuff">
 <pre>;also see
 !! agp on aws
 &quot;&quot;&quot;
@@ -12148,6 +12148,8 @@ Disadvantages: no including image hosting, raster analytics, and ortho mapping
 [[Recommended architecture for stand-alone ArcGIS Image Server|https://doc.arcgis.com/en/imagery/workflows/best-practices/recommended-architecture.htm]]
 ''VPC'': Virtual Private Cloud
 ''RDS'':  ~~Relational Database Service~~ Raster Data Store (a connection to a cloud storage e.g. ''Amazon Simple Storage Service (S3)'')
+
+Publish an image service to a stand-alone ~ArcGIS Image Server site, and use the image service URL to [[add the image service as an item|https://enterprise.arcgis.com/en/portal/latest/administer/windows/add-items.htm#ESRI_SECTION1_1A21D51E1AFC41EA9974209BD94E50C0]] to AGOL. If the image service is secured, you must take additional steps to access the service in your portal or See [[Connect to secure services|https://enterprise.arcgis.com/en/portal/latest/administer/windows/connect-secured-services.htm]] for instructions to connect to these services in an Enterprise portal and [[ArcGIS Server web services|https://doc.arcgis.com/en/arcgis-online/reference/arcgis-server-services.htm#ESRI_SECTION1_FEB0DF92DA064B6A970DFB59A18AA4C2]] for information on configuring secure services for AGOL.
 
 [[publish an image service|https://pro.arcgis.com/en/pro-app/latest/help/sharing/overview/publish-an-image-service.htm]]
 must be connected to a server that is not federated (it should be stand-alone). 
