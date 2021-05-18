@@ -10549,8 +10549,8 @@ very-muted-foreground: #888888</pre>
 <div created="20201102220730686" modified="20201102220730686" title="$:/state/importpreviewtype">
 <pre>$:/core/ui/ImportPreviews/Fields</pre>
 </div>
-<div created="20210225154246345" creator="Z" modified="20210513171531515" modifier="Z" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210225154246345" creator="Z" modified="20210518035523367" modifier="Z" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20201102215728482" creator="Z" modified="20201102225334370" modifier="Z" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Saving</pre>
@@ -17166,13 +17166,18 @@ Total: 1,884
 &quot;&quot;&quot;
 </pre>
 </div>
-<div changecount="32" created="20120529175100000" creator="YourName" modified="20210518015734181" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
+<div changecount="32" created="20120529175100000" creator="YourName" modified="20210518035610006" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
 <pre>;see installation on WHOI servers. This is on ''Sand''
-:&quot;&quot;&quot;
-conda env create --quiet --file environment.yml
+
+```
 conda create -n nco nco -y
 conda activate nco
-&quot;&quot;&quot;
+```
+skip this (used for IOOS setup)
+
+```
+conda env create --quiet --file environment.yml
+```
 
 !!Examples
 https://www.unidata.ucar.edu/software/netcdf/workshops/2008/index.html
