@@ -10561,8 +10561,8 @@ very-muted-foreground: #888888</pre>
 <div created="20201102220946346" modified="20201102220947062" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20201102220317328" creator="Z" modified="20210503190015411" modifier="Z" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20201102220317328" creator="Z" modified="20210517163249767" modifier="Z" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
@@ -10570,7 +10570,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210512145247035" creator="Z" list="[[CLOUD stuff]] [[Compare Landsat to NAIP UVVR]]" modified="20210513171639508" modifier="Z" title="$:/StoryList">
+<div created="20210517173012876" creator="Z" list="[[NCO netcdf operators]] [[Scylla software and environment]] [[UNIX, LINUX, WINDOWS, MATLAB COMMANDS]] [[CLOUD stuff]] [[Compare Landsat to NAIP UVVR]]" modified="20210518015428002" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10634,8 +10634,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210512185536473" modifier="Z" title="$:/temp/search">
-<pre>wetland classification</pre>
+<div created="20201102224059176" creator="Z" modified="20210518015426263" modifier="Z" title="$:/temp/search">
+<pre>nco</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -17166,8 +17166,15 @@ Total: 1,884
 &quot;&quot;&quot;
 </pre>
 </div>
-<div changecount="32" created="20120529175100000" creator="YourName" modified="20200106213623105" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
-<pre>!!Examples
+<div changecount="32" created="20120529175100000" creator="YourName" modified="20210518015734181" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
+<pre>;see installation on WHOI servers. This is on ''Sand''
+:&quot;&quot;&quot;
+conda env create --quiet --file environment.yml
+conda create -n nco nco -y
+conda activate nco
+&quot;&quot;&quot;
+
+!!Examples
 https://www.unidata.ucar.edu/software/netcdf/workshops/2008/index.html
 
 http://fossies.org/linux/nco/README.md
