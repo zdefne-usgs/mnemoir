@@ -10549,8 +10549,8 @@ very-muted-foreground: #888888</pre>
 <div created="20201102220730686" modified="20201102220730686" title="$:/state/importpreviewtype">
 <pre>$:/core/ui/ImportPreviews/Fields</pre>
 </div>
-<div created="20210225154246345" creator="Z" modified="20210518035523367" modifier="Z" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20210225154246345" creator="Z" modified="20210513171531515" modifier="Z" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20201102215728482" creator="Z" modified="20201102225334370" modifier="Z" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Saving</pre>
@@ -10561,8 +10561,8 @@ very-muted-foreground: #888888</pre>
 <div created="20201102220946346" modified="20201102220947062" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20201102220317328" creator="Z" modified="20210517163249767" modifier="Z" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20201102220317328" creator="Z" modified="20210503190015411" modifier="Z" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
@@ -10570,7 +10570,7 @@ very-muted-foreground: #888888</pre>
 <div created="20161123173254754" modified="20161123173254754" title="$:/status/UserName">
 <pre>Z</pre>
 </div>
-<div created="20210517173012876" creator="Z" list="[[NCO netcdf operators]] [[Scylla software and environment]] [[UNIX, LINUX, WINDOWS, MATLAB COMMANDS]] [[CLOUD stuff]] [[Compare Landsat to NAIP UVVR]]" modified="20210518015428002" modifier="Z" title="$:/StoryList">
+<div created="20210519182441801" creator="Z" list="[[python in Arcgis pro]] [[NCO netcdf operators]]" modified="20210519182441801" modifier="Z" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201105060526552" creator="Z" modified="20201105060526552" modifier="Z" title="$:/temp/advancedsearch">
@@ -10634,8 +10634,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210518015426263" modifier="Z" title="$:/temp/search">
-<pre>nco</pre>
+<div created="20201102224059176" creator="Z" modified="20210519182438621" modifier="Z" title="$:/temp/search">
+<pre>package manager</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -17166,20 +17166,8 @@ Total: 1,884
 &quot;&quot;&quot;
 </pre>
 </div>
-<div changecount="32" created="20120529175100000" creator="YourName" modified="20210518035610006" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
-<pre>;see installation on WHOI servers. This is on ''Sand''
-
-```
-conda create -n nco nco -y
-conda activate nco
-```
-skip this (used for IOOS setup)
-
-```
-conda env create --quiet --file environment.yml
-```
-
-!!Examples
+<div changecount="32" created="20120529175100000" creator="YourName" modified="20200106213623105" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
+<pre>!!Examples
 https://www.unidata.ucar.edu/software/netcdf/workshops/2008/index.html
 
 http://fossies.org/linux/nco/README.md
@@ -18531,7 +18519,7 @@ C:\Users\zdefne\Documents\ArcGIS\My_Scripts
 C=raw_input('C=?')
 &quot;&quot;&quot;</pre>
 </div>
-<div created="20201002141719230" creator="Z" modified="20210416224223032" modifier="Z" title="python in Arcgis pro">
+<div created="20201002141719230" creator="Z" modified="20210519190136923" modifier="Z" title="python in Arcgis pro">
 <pre>aka. arcpy in arcpro
 
 &quot;&quot;&quot;
@@ -18553,6 +18541,14 @@ Or by running the proenv.bat file in the terminal:
 Copy and paste the default, read-only 'arcgispro-py3' env in 'C:\Program Files\ArcGIS\Pro\bin\Python\envs' to 'C:\Users\[username]\AppData\Local\ESRI\conda\envs'  ~~I created a new directory on my C: drive and pasted the copied directory there. (C:\ArcGIS_Pro\Conda\Cloned_Envs)~~
 Rename the folder to be unique (e.g. 'arcgispro-py3-username')
 Open ArcGIS Pro, then Package Manager, and activate the env (Note that a new 'proenv.txt' file is added to the env folder. I am not sure what this does, but it lists the folder of the newly create env.)
+
+Another post in the same link says:
+signed in/out Esri makes a difference
+edit the  
+
+ssl_verify: C:\SoftwareSupport\DOIRootCA2.cer
+to
+ssl_verify: False
 &quot;&quot;&quot;
 </pre>
 </div>
