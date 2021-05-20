@@ -10634,8 +10634,8 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20201102224059176" creator="Z" modified="20210520181303498" modifier="Z" title="$:/temp/search">
-<pre>nco</pre>
+<div created="20201102224059176" creator="Z" modified="20210520181415436" modifier="Z" title="$:/temp/search">
+<pre>conda create</pre>
 </div>
 <div modified="20161123173112120" title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
@@ -17166,8 +17166,16 @@ Total: 1,884
 &quot;&quot;&quot;
 </pre>
 </div>
-<div changecount="32" created="20120529175100000" creator="YourName" modified="20200106213623105" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
-<pre>!!Examples
+<div changecount="32" created="20120529175100000" creator="YourName" modified="20210520181634240" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
+<pre>;see installation on WHOI servers. This is on ''Sand''
+:&quot;&quot;&quot;
+conda env create --quiet --file environment.yml
+conda create -n nco nco -y
+conda activate nco
+&quot;&quot;&quot;
+
+
+!!Examples
 https://www.unidata.ucar.edu/software/netcdf/workshops/2008/index.html
 
 http://fossies.org/linux/nco/README.md
