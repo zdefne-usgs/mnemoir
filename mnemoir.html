@@ -17166,13 +17166,19 @@ Total: 1,884
 &quot;&quot;&quot;
 </pre>
 </div>
-<div changecount="32" created="20120529175100000" creator="YourName" modified="20210520181634240" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
-<pre>;see installation on WHOI servers. This is on ''Sand''
-:&quot;&quot;&quot;
-conda env create --quiet --file environment.yml
+<div changecount="32" created="20120529175100000" creator="YourName" modified="20210520181959733" modifier="Z" tags="netcdf" title="NCO netcdf operators" type="text/vnd.tiddlywiki">
+<pre>!!installation on WHOI servers 
+This is on ''Sand''
+
+```
 conda create -n nco nco -y
 conda activate nco
-&quot;&quot;&quot;
+```
+skip this (used for IOOS setup)
+
+```
+conda env create --quiet --file environment.yml
+```
 
 
 !!Examples
