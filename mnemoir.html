@@ -12428,22 +12428,30 @@ Graphical user interface (object based)
 #output class (netcdf files)
 </pre>
 </div>
-<div created="20210423173638009" creator="Z" modified="20210623201657262" modifier="Z" tags="" title="Compare Landsat to NAIP UVVR">
+<div created="20210423173638009" creator="Z" modified="20210624031151220" modifier="Z" tags="" title="Compare Landsat to NAIP UVVR">
 <pre>;see 
 :[[UVVR National]]
 :[[UVVR Landsat]]
 :[[UVVR change paper]]
 
+;use compareUVV_2021_05_10.tbx under BW (or GEOPROCS_GENERAL)
+;00bufferinMask
+:buffer in 30m from CMU_mask
 ;01createRandPoints
-#create random points (&gt;50m apart). 
-;after running 04naip2landsat 
+:create random points (&gt;60m apart). 
+;02naip2landsat
+:create polygons for each Landsat pixel footprint 
+;03zonalTable2Feat
+:extract from NAIP using the polygon of pixel footprint
+;04compareLandsatNaipV2
+:assign LSAT values to rand points to get [acc_pnts_lsat]
 #extract by mask (''using the point features'')from Landsat using points
 #convert raster to integer. Int(raster)
 #project raster to UTM
 #(not sure if this is used)convert UVVc to float. Float(UVVc)
 # two options here
-##run extractByPolyParts under GEOPROCS_GENERAL. latest folder is FIIS
-##or use zonalTable 2Feat tool
+##run extractByPolyParts under GEOPROCS_GENERAL. latest folder is ~~FIIS PIEPR~~ BW
+##or use zonalTable2Feat tool
 #can compare the results to ''02compareLandsatNaipV2'' to see they are different
 
 ;see for results
