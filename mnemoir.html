@@ -12428,7 +12428,7 @@ Graphical user interface (object based)
 #output class (netcdf files)
 </pre>
 </div>
-<div created="20210423173638009" creator="Z" modified="20210624031151220" modifier="Z" tags="" title="Compare Landsat to NAIP UVVR">
+<div created="20210423173638009" creator="Z" modified="20210624031724774" modifier="Z" tags="" title="Compare Landsat to NAIP UVVR">
 <pre>;see 
 :[[UVVR National]]
 :[[UVVR Landsat]]
@@ -12445,6 +12445,11 @@ Graphical user interface (object based)
 :extract from NAIP using the polygon of pixel footprint
 ;04compareLandsatNaipV2
 :assign LSAT values to rand points to get [acc_pnts_lsat]
+;05spatiaJoin
+:join &quot;LSAT&quot; and NAIP &quot;MEAN&quot; values
+;06exportToExcel
+:from compare_lsat_naip_uvvr_wgs84.shp to Excel
+;the following gives the same result: 
 #extract by mask (''using the point features'')from Landsat using points
 #convert raster to integer. Int(raster)
 #project raster to UTM
